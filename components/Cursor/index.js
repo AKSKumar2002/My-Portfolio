@@ -9,9 +9,9 @@ const Cursor = () => {
 
   const getCusomColor = () => {
     if (theme.theme === "dark") {
-      return "linear-gradient(90deg, #fff, #ccc)";
+      return "#eee"; // Even lighter grey for dark mode
     } else if (theme.theme === "light") {
-      return "linear-gradient(90deg, #000, #555)";
+      return "#222"; // Slightly lighter dark grey for light mode
     }
   };
 
@@ -27,12 +27,12 @@ const Cursor = () => {
           dimensions={30}
           fill={getCusomColor()}
           smoothness={{
-            movement: 0.2,
-            scale: 0.1,
-            opacity: 0.2,
+            movement: 0.1, // Balanced movement speed
+            scale: 0.05,   // Faster scaling
+            opacity: 0.1,  // Smooth opacity transitions
           }}
-          targetOpacity={0.5}
-          targetScale={2}
+          targetOpacity={0.7} // Slightly higher target opacity for better visibility
+          targetScale={1.5}   // Reduced scale for better usability
         />
       )}
     </>
