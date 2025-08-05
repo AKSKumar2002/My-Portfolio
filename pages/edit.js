@@ -15,24 +15,17 @@ const Edit = () => {
   const { theme } = useTheme();
 
   const saveData = () => {
-    fetch("/api/portfolio", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((response) => {
-        if (response.ok) {
-          alert("Data saved successfully!");
-        } else {
-          alert("Failed to save data.");
-        }
-      })
-      .catch((error) => {
-        console.error("Error saving data:", error);
-        alert("An error occurred while saving data.");
+    if (process.env.NODE_ENV === "development") {
+      fetch("/api/portfolio", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
       });
+    } else {
+      alert("This thing only works in development mode.");
+    }
   };
 
   // Project Handler
