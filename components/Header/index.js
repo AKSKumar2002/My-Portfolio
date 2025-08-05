@@ -27,7 +27,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                 onClick={() => router.push("/")}
                 className="font-medium p-2 laptop:p-0 link"
               >
-                {name}.
+                {name}
               </h1>
 
               <div className="flex items-center">
@@ -125,9 +125,14 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
       >
         <h1
           onClick={() => router.push("/")}
-          className="font-medium cursor-pointer mob:p-2 laptop:p-0"
+          className="font-medium cursor-pointer mob:p-2 laptop:p-0 flex flex-col items-center"
         >
-          {name}.
+          <img
+            src="/images/logo.png" // Path to your logo image
+            alt="Logo"
+            className="w-12 h-12 rounded-full mb-1" // Adjust size and styling as needed
+          />
+          {name}
         </h1>
         {!isBlog ? (
           <div className="flex">
