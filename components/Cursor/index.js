@@ -9,9 +9,9 @@ const Cursor = () => {
 
   const getCusomColor = () => {
     if (theme.theme === "dark") {
-      return "#fff";
+      return "linear-gradient(90deg, #fff, #ccc)";
     } else if (theme.theme === "light") {
-      return "#000";
+      return "linear-gradient(90deg, #000, #555)";
     }
   };
 
